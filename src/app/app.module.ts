@@ -3,16 +3,16 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { HolidaysComponent } from './holidays/holidays.component';
+import { HolidaysModule } from './holidays/holidays.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HolidaysComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HolidaysModule
   ],
   providers: [],
   bootstrap: [AppComponent]
