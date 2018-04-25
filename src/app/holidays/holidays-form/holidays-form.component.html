@@ -3,6 +3,12 @@
   <!-- Content here -->
 <form (ngSubmit)="onSubmit()" #holidayForm="ngForm">
   <h1 class="h4">Enter holiday details</h1>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input id="description" type="text" class="form-control" [(ngModel)]="holiday.description" name="description">
+  </div>
+
   <mat-form-field>
     <input matInput [matDatepicker]="holidayStart" placeholder="Choose a start date" [(ngModel)]="holiday.holidayStart" name="holidayStart">
     <mat-datepicker-toggle matSuffix [for]="holidayStart"></mat-datepicker-toggle>
