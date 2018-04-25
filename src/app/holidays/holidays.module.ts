@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
-import { HolidaysComponent } from './holidays.component';
+import { HolidaysFormComponent } from './holidays-form/holidays-form.component';
 
 @NgModule({
   imports: [
@@ -16,10 +16,10 @@ import { HolidaysComponent } from './holidays.component';
     MatNativeDateModule
   ],
   declarations: [
-    HolidaysComponent
+    HolidaysFormComponent
   ],
   exports: [
-    HolidaysComponent
+    HolidaysFormComponent
   ]
 })
 export class HolidaysModule { }
