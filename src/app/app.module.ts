@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HolidaysModule } from './holidays/holidays.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { HolidaysModule } from './holidays/holidays.module';
   ],
   imports: [
     BrowserModule,
-    HolidaysModule
+    HolidaysModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
