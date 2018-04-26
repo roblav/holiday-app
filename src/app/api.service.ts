@@ -16,13 +16,9 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   public getHolidays(): Observable<any> {
-    console.log(API_URL + '/holidays')
-    return this.http.get(API_URL + '/holidays');
-    // .map(response => {
-    //   const holidays = response.json();
-    //   return holidays.map((holiday) => new Holiday(holiday));
-    // })
-    // .catch(this.handleError);
+    return this.http
+      .get(API_URL + '/holidays')
+      .catch(this.handleError);
   }
 
   private handleError (error: Response | any) {

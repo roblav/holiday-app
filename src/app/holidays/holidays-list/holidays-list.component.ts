@@ -15,11 +15,10 @@ export class HolidaysListComponent implements OnInit {
   constructor(private holidayDataService:HolidayDataService) { }
 
   ngOnInit() {
-    return this.holidayDataService
+    this.holidayDataService
       .getHolidays()
-      .subscribe(holidays => {
-        this.holidays = holidays
-      }
+      .subscribe(
+        holidays => { this.holidays = holidays }
     );
   }
 
