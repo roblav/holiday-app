@@ -31,6 +31,8 @@
     <label class="form-check-label" for="taken">Holiday taken</label>
   </div>
 
-  <button type="submit" class="btn btn-primary">Add Holiday</button>
+  <input type="hidden" [(ngModel)]="holiday.id" name="id">
+
+  <button type="submit" class="btn btn-primary">{{ editHoliday? 'Edit' : 'Add' }} Holiday</button>
 </form>
 {{diagnostic}}

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Holiday } from '../holiday.model'
+import { ActivatedRoute, Router } from '@angular/router';
+import { Holiday } from '../holiday.model';
 import { HolidayDataService } from '../holiday-data.service';
 
 @Component({
@@ -18,7 +18,8 @@ export class HolidaysListComponent implements OnInit {
   
   constructor(
     private holidayDataService:HolidayDataService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private router: Router) {
 
   }
 
@@ -49,6 +50,16 @@ export class HolidaysListComponent implements OnInit {
         }
     );
 
+  }
+
+  editHoliday(id) {
+    console.log(`Edit ${id}`)
+    // Direct the user to the edit form
+    this.router.navigate(['holidays/edit', id]);
+  }
+
+  deleteHoliday(id) {
+    console.log(`Delete ${id}`)
   }
 
 }

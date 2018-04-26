@@ -50,7 +50,7 @@
       "days": 2,
       "hoursTaken": 15,
       "id": 4,
-      "description": "U2 Ireland",
+      "description": "U2 Ireland - test",
       "holidayStart": "2017-07-19T23:00:00.000Z",
       "holidayEnd": "2017-07-20T23:00:00.000Z"
     },
@@ -89,6 +89,22 @@
       "holidayStart": "2017-07-30T23:00:00.000Z",
       "holidayEnd": "2017-07-30T23:00:00.000Z",
       "id": 8
+    },
+    {
+      "taken": true,
+      "hoursTaken": 7.5,
+      "description": "Test holiday",
+      "holidayStart": "2018-04-25T23:00:00.000Z",
+      "holidayEnd": "2018-04-25T23:00:00.000Z",
+      "id": 9
+    },
+    {
+      "taken": false,
+      "hoursTaken": 3,
+      "description": "Summer holiday - Centre Parcs",
+      "holidayStart": "2018-04-27T23:00:00.000Z",
+      "holidayEnd": "2018-04-27T23:00:00.000Z",
+      "id": 10
     }
   ]
 }

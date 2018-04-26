@@ -21,6 +21,24 @@ export class ApiService {
       .catch(this.handleError);
   }
 
+  public getHolidayById(id): Observable<Holiday> {
+    return this.http
+      .get(API_URL + '/holidays/' + id)
+      .catch(this.handleError);
+  }
+
+  public createHoliday(holiday: Holiday): Observable<Holiday> {
+    return this.http
+      .post(API_URL + '/holidays', holiday)
+      .catch(this.handleError);
+  }
+
+  public updateHoliday(holiday: Holiday, id: number): Observable<Holiday> {
+    return this.http
+      .put(API_URL + '/holidays/' + id, holiday)
+      .catch(this.handleError);
+  }
+
   private handleError (error: Response | any) {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);
