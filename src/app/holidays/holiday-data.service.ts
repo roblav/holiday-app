@@ -23,7 +23,7 @@ export class HolidayDataService {
     "description":"Family day"
   }
 
-  holidays: Holiday[] = [this.holiday1, this.holiday2];
+  holidaysTest: Holiday[] = [this.holiday1, this.holiday2];
 
   constructor(private api: ApiService) { }
 
@@ -36,7 +36,7 @@ export class HolidayDataService {
       holiday.id = ++this.lastId
     }
     // Add new holiday to holidays
-    this.holidays.push(holiday);
+    this.holidaysTest.push(holiday);
     return this;
   }
 

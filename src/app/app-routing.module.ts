@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'holidays/add', component: HolidaysFormComponent },
-  { path: 'holidays/taken', component: HolidaysListComponent },
+  { path: 'holidays/:status', component: HolidaysListComponent },
   { path: '**', component: PageNotFoundComponent }
 ]
 
