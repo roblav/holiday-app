@@ -10,13 +10,17 @@ import { HolidayDataService } from '../holiday-data.service';
 })
 export class HolidaysListComponent implements OnInit {
 
+  holidays: Holiday[] = [];
+
   constructor(private holidayDataService:HolidayDataService) { }
 
-  get holidays() {
-    return this.holidayDataService.getHolidays();
-  }
-
   ngOnInit() {
+    return this.holidayDataService
+      .getHolidays()
+      .subscribe(holidays => {
+        this.holidays = holidays
+      }
+    );
   }
 
 }

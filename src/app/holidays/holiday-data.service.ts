@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Holiday } from './holiday.model';
+import { ApiService } from '../api.service';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class HolidayDataService {
@@ -23,11 +25,10 @@ export class HolidayDataService {
 
   holidays: Holiday[] = [this.holiday1, this.holiday2];
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
-  getHolidays(): Holiday[] {
-    console.log(this.holidays)
-    return this.holidays;
+  getHolidays(): Observable<Holiday[]> {
+    return this.api.getHolidays();
   }
 
   createHoliday(holiday: Holiday): HolidayDataService {
