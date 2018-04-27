@@ -59,7 +59,17 @@ export class HolidaysListComponent implements OnInit {
   }
 
   deleteHoliday(id) {
-    console.log(`Delete ${id}`)
+    let holiday = this.allHolidays.filter(holiday => holiday.id === id)
+    if(confirm(`Are you sure you want to delete ${holiday[0].description}?`)) {
+      this.holidayDataService
+        .deleteHoliday(id)
+        .subscribe(
+          (_) => {
+            // Reload page to display updated list
+            location.reload();
+          }
+        );
+    }
   }
 
 }

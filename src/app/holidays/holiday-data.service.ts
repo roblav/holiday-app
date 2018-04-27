@@ -49,8 +49,8 @@ export class HolidayDataService {
     return this.api.updateHoliday(holiday, id);
   }
 
-  deleteHoliday(id) {
-
+  deleteHoliday(id): Observable<Holiday> {
+    return this.api.deleteHoliday(id);
   }
 
 

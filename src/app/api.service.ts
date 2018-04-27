@@ -39,6 +39,12 @@ export class ApiService {
       .catch(this.handleError);
   }
 
+  public deleteHoliday(id: number): Observable<Holiday> {
+    return this.http
+      .delete(API_URL + '/holidays/' + id)
+      .catch(this.handleError);
+  }
+
   private handleError (error: Response | any) {
     console.error('ApiService::handleError', error);
     return Observable.throw(error);
