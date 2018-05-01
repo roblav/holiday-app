@@ -6,6 +6,8 @@ import { MatInputModule, MatDatepickerModule, MatNativeDateModule } from '@angul
 
 import { HolidaysFormComponent } from './holidays-form/holidays-form.component';
 import { HolidaysListComponent } from './holidays-list/holidays-list.component';
+import { HolidaysComponent } from './holidays.component';
+import { HolidaysSummaryComponent } from './holidays-summary/holidays-summary.component';
 
 @NgModule({
   imports: [
@@ -18,7 +20,9 @@ import { HolidaysListComponent } from './holidays-list/holidays-list.component';
   ],
   declarations: [
     HolidaysFormComponent,
-    HolidaysListComponent
+    HolidaysListComponent,
+    HolidaysComponent,
+    HolidaysSummaryComponent
   ],
   exports: [
     HolidaysFormComponent,

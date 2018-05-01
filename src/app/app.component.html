@@ -1,5 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-dashboard></app-dashboard>
-<div class="container">
-  <router-outlet></router-outlet>
+<app-dashboard
+  [daysPending]="holidaysPendingListed"
+  [daysTaken]="holidaysTakenListed"
+></app-dashboard>
+
+<alert></alert>
+
+<div class="container mt-2">
+  <div class="row no-gutters"><router-outlet></router-outlet></div>
 </div>

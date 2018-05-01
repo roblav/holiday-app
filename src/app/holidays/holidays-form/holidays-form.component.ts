@@ -50,8 +50,8 @@ export class HolidaysFormComponent implements OnInit {
         .updateHoliday(this.holiday, this.holiday.id)
         .subscribe(
           (newHoliday) => {
-            console.log(newHoliday);
-            this.router.navigate(['home']);
+            //console.log(newHoliday);
+            this.router.navigate(['home'], { queryParams: { message: "updated" } });
           }
         );
     } else {
@@ -60,8 +60,8 @@ export class HolidaysFormComponent implements OnInit {
         .createHoliday(this.holiday)
         .subscribe(
           (newHoliday) => {
-            console.log(newHoliday);
-            this.router.navigate(['home']);
+            //onsole.log(newHoliday);
+            this.router.navigate(['home'], { queryParams: { message: "created" } });
           }
         );
     }

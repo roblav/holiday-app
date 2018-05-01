@@ -11,12 +11,17 @@ import { PageNotFoundComponent } from './components/page-not-found.component';
 import { HomeComponent } from './components/home.component';
 import { ApiService } from './api.service';
 
+// import alert service and component
+import { AlertComponent } from './_directives/index';
+import { AlertService } from './_services/index';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    // include alert directive component in app module declarations
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,11 @@ import { ApiService } from './api.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ApiService],
+  providers: [
+    ApiService,
+    // include alert service in app module providers
+    AlertService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

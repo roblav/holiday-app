@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Holiday } from '../holiday.model';
 import { HolidayDataService } from '../holiday-data.service';
+import { AlertService } from '../../_services/index';
 
 @Component({
   selector: 'app-holidays-list',
@@ -19,7 +20,8 @@ export class HolidaysListComponent implements OnInit {
   constructor(
     private holidayDataService:HolidayDataService,
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    private alertService: AlertService) {
 
   }
 
@@ -28,6 +30,7 @@ export class HolidaysListComponent implements OnInit {
     // Be aware the route params finishes before the getHolidays call
     this.route.params.subscribe(
       params => {
+        console.log(params)
         if(params.status === 'taken') {
           // Filter holidays - Return only holidays "taken": true
           this.title = "Holidays Taken";
@@ -53,7 +56,7 @@ export class HolidaysListComponent implements OnInit {
   }
 
   editHoliday(id) {
-    console.log(`Edit ${id}`)
+    //console.log(`Edit ${id}`)
     // Direct the user to the edit form
     this.router.navigate(['holidays/edit', id]);
   }
@@ -66,6 +69,7 @@ export class HolidaysListComponent implements OnInit {
         .subscribe(
           (_) => {
             // Reload page to display updated list
+            this.alertService.warn("Holiday deleted");
             location.reload();
           }
         );

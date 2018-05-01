@@ -1,0 +1,48 @@
+
+<div class="hero">
+  <p class="hero-title">Balance <span>2017</span></p>
+  <div class="item">
+    <p class="number">{{holidayBalance.balanceEndOfLastYear  | number: '1.0-2'}}</p>
+    <p class="time">hours</p>
+  </div>
+</div>
+
+<div class="hero">
+  <p class="hero-title">Current <span>Allowance</span></p>
+  <div class="item">
+    <p class="number">{{holidayBalance.currentAllowance  | number: '1.0-2'}}</p>
+    <p class="time">hours</p>
+  </div>
+</div>
+
+<div class="hero">
+  <p class="hero-title">Holidays <span>Taken</span></p>
+  <div class="item">
+    <p class="number">{{hoursTaken | number: '1.0-2'}}</p>
+    <p class="time">hours</p>
+  </div>
+</div>
+
+<div class="hero">
+  <p class="hero-title">Estimated <span>balance</span></p>
+  <div class="item">
+    <p class="number">{{holidayBalance.estimatedBalance | number: '1.0-2'}}</p>
+    <p class="time">hours</p>
+  </div>
+</div>
+
+<div class="hero">
+  <p class="hero-title">Holidays <span>Pending</span></p>
+  <div class="item">
+    <p class="number">{{hoursPending / 7.5 | number: '1.0-2'}}</p>
+    <p class="time">days</p>
+  </div>
+</div>
+
+<div class="hero">
+  <p class="hero-title">Estimated <span>end of year</span></p>
+  <div class="item">
+    <p class="number">{{holidayBalance.estimatedBalanceEOY / 7.5 | number: '1.0-2'}}</p>
+    <p class="time">days</p>
+  </div>
+</div>

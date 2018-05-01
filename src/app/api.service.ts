@@ -20,6 +20,7 @@ export class ApiService {
       .get(API_URL + '/holidays')
       .catch(this.handleError);
   }
+  
 
   public getHolidayById(id): Observable<Holiday> {
     return this.http

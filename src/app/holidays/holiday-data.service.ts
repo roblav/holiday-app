@@ -6,8 +6,6 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class HolidayDataService {
 
-  lastId: number = 100;
-
   holiday1: Holiday = {
     "taken": true,
     "hoursTaken": 7.5,
@@ -36,12 +34,6 @@ export class HolidayDataService {
   }
 
   createHoliday(holiday: Holiday): Observable<Holiday> {
-    if(!holiday.id){
-      holiday.id = ++this.lastId
-    }
-    // Add new holiday to holidays
-    //this.holidaysTest.push(holiday);
-    //return this;
     return this.api.createHoliday(holiday);
   }
 
@@ -52,6 +44,5 @@ export class HolidayDataService {
   deleteHoliday(id): Observable<Holiday> {
     return this.api.deleteHoliday(id);
   }
-
 
 }
