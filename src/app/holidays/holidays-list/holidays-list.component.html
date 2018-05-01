@@ -4,20 +4,17 @@
   <thead>
     <tr>
       <th class="col-xs-3">Description</th>
-      <th class="col-xs-1">Start date</th>
-      <th class="col-xs-1">End date</th>
-      <th class="col-xs-1">Hours</th>
+      <th class="col-xs-1">Hrs</th>
+      <th class="col-xs-1">Days</th>
       <th class="col-xs-1">&nbsp;</th>
       <th class="col-xs-1">&nbsp;</th>
     </tr>
   </thead>
-  <tfoot *ngIf="holidaysTotals">
+  <tfoot *ngIf="totalHours">
     <tr>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
       <th>Totals:</th>
-      <th>{{holidaysTotals.days}}</th>
-      <th>{{holidaysTotals.hours}}</th>
+      <th>{{totalHours | number: '1.0-2'}}</th>
+      <th>{{totalHours / 7.5 | number: '1.0-2'}}</th>
       <th>&nbsp;</th>
       <th>&nbsp;</th>
     </tr>
@@ -25,9 +22,10 @@
   <tbody>
     <tr *ngFor="let holiday of holidays">
       <td>{{holiday.description}}</td>
-      <td>{{holiday.holidayStart | date:'dd/MM/yyyy'}}</td><!--{{1288323623006 | date:'MM/dd/yyyy @ h:mma'}}-->
-      <td>{{holiday.holidayEnd | date:'dd/MM/yyyy'}}</td>
+      <!-- <td>{{holiday.holidayStart | date:'dd/MM/yyyy'}}</td>{{1288323623006 | date:'MM/dd/yyyy @ h:mma'}} -->
+      <!-- <td>{{holiday.holidayEnd | date:'dd/MM/yyyy'}}</td> -->
       <td>{{holiday.hoursTaken}}</td>
+      <td>{{holiday.hoursTaken / 7.5 | number: '1.0-2'}}</td>
       <td><button (click)="editHoliday(holiday.id)">Edit</button></td>
       <td><button (click)="deleteHoliday(holiday.id)">Delete</button></td>
     </tr>

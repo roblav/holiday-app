@@ -21,9 +21,11 @@
   </mat-form-field>
 
   <div class="form-group">
-    <label for="hoursTaken">Time taken</label>
+    <label for="hoursTaken">Time taken - Hours</label>
     <input type="number" class="form-control" id="hoursTaken" placeholder="Enter hours" [(ngModel)]="holiday.hoursTaken" name="hoursTaken">
-    <small class="form-text text-muted">Enter amount of hours taken</small>
+    <small *ngIf="holiday.hoursTaken" class="form-text text-muted">
+      Time taken in days: {{holiday.hoursTaken / 7.5 | number: '1.0-2'}}
+    </small>
   </div>
 
   <div class="form-group form-check">

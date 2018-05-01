@@ -16,6 +16,8 @@ export class HolidaysListComponent implements OnInit {
   holidays: Holiday[] = [];
   title: String = ""
   taken: Boolean
+
+  totalHours = 0;
   
   constructor(
     private holidayDataService:HolidayDataService,
@@ -36,10 +38,12 @@ export class HolidaysListComponent implements OnInit {
           this.title = "Holidays Taken";
           this.taken = true
           this.holidays = this.allHolidays.filter(holiday => holiday.taken === true)
+          this.totalHours = this.holidays.reduce((acc, cur) => acc + +cur.hoursTaken, 0)
         } else {
           this.title = "Holidays Pending";
           this.taken = false
           this.holidays = this.allHolidays.filter(holiday => holiday.taken === false)
+          this.totalHours = this.holidays.reduce((acc, cur) => acc + +cur.hoursTaken, 0)
         }
       }
     )

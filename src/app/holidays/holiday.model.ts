@@ -7,7 +7,6 @@ export class Holiday {
   taken?: boolean = false
 
   constructor(values: Object = {}) {
-    this.hoursTaken = 0
     Object.assign(this, values);
   }
 }
